@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		70FC54F92DA952FD00BCE3B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70FC54E22DA952FD00BCE3B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70FC54E92DA952FD00BCE3B3;
+			remoteInfo = BatteryAlert;
+		};
+		70FC55032DA952FD00BCE3B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70FC54E22DA952FD00BCE3B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70FC54E92DA952FD00BCE3B3;
+			remoteInfo = BatteryAlert;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		70FC54EA2DA952FD00BCE3B3 /* BatteryAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70FC54F82DA952FD00BCE3B3 /* BatteryAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70FC55022DA952FD00BCE3B3 /* BatteryAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		70FC54EC2DA952FD00BCE3B3 /* BatteryAlert */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BatteryAlert;
+			sourceTree = "<group>";
+		};
+		70FC54FB2DA952FD00BCE3B3 /* BatteryAlertTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BatteryAlertTests;
+			sourceTree = "<group>";
+		};
+		70FC55052DA952FD00BCE3B3 /* BatteryAlertUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BatteryAlertUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70FC54E72DA952FD00BCE3B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FC54F52DA952FD00BCE3B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FC54FF2DA952FD00BCE3B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70FC54E12DA952FD00BCE3B3 = {
+			isa = PBXGroup;
+			children = (
+				70FC54EC2DA952FD00BCE3B3 /* BatteryAlert */,
+				70FC54FB2DA952FD00BCE3B3 /* BatteryAlertTests */,
+				70FC55052DA952FD00BCE3B3 /* BatteryAlertUITests */,
+				70FC54EB2DA952FD00BCE3B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70FC54EB2DA952FD00BCE3B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70FC54EA2DA952FD00BCE3B3 /* BatteryAlert.app */,
+				70FC54F82DA952FD00BCE3B3 /* BatteryAlertTests.xctest */,
+				70FC55022DA952FD00BCE3B3 /* BatteryAlertUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70FC54E92DA952FD00BCE3B3 /* BatteryAlert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70FC550C2DA952FD00BCE3B3 /* Build configuration list for PBXNativeTarget "BatteryAlert" */;
+			buildPhases = (
+				70FC54E62DA952FD00BCE3B3 /* Sources */,
+				70FC54E72DA952FD00BCE3B3 /* Frameworks */,
+				70FC54E82DA952FD00BCE3B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				70FC54EC2DA952FD00BCE3B3 /* BatteryAlert */,
+			);
+			name = BatteryAlert;
+			packageProductDependencies = (
+			);
+			productName = BatteryAlert;
+			productReference = 70FC54EA2DA952FD00BCE3B3 /* BatteryAlert.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70FC54F72DA952FD00BCE3B3 /* BatteryAlertTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70FC550F2DA952FD00BCE3B3 /* Build configuration list for PBXNativeTarget "BatteryAlertTests" */;
+			buildPhases = (
+				70FC54F42DA952FD00BCE3B3 /* Sources */,
+				70FC54F52DA952FD00BCE3B3 /* Frameworks */,
+				70FC54F62DA952FD00BCE3B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70FC54FA2DA952FD00BCE3B3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				70FC54FB2DA952FD00BCE3B3 /* BatteryAlertTests */,
+			);
+			name = BatteryAlertTests;
+			packageProductDependencies = (
+			);
+			productName = BatteryAlertTests;
+			productReference = 70FC54F82DA952FD00BCE3B3 /* BatteryAlertTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70FC55012DA952FD00BCE3B3 /* BatteryAlertUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70FC55122DA952FD00BCE3B3 /* Build configuration list for PBXNativeTarget "BatteryAlertUITests" */;
+			buildPhases = (
+				70FC54FE2DA952FD00BCE3B3 /* Sources */,
+				70FC54FF2DA952FD00BCE3B3 /* Frameworks */,
+				70FC55002DA952FD00BCE3B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70FC55042DA952FD00BCE3B3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				70FC55052DA952FD00BCE3B3 /* BatteryAlertUITests */,
+			);
+			name = BatteryAlertUITests;
+			packageProductDependencies = (
+			);
+			productName = BatteryAlertUITests;
+			productReference = 70FC55022DA952FD00BCE3B3 /* BatteryAlertUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70FC54E22DA952FD00BCE3B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					70FC54E92DA952FD00BCE3B3 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					70FC54F72DA952FD00BCE3B3 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 70FC54E92DA952FD00BCE3B3;
+					};
+					70FC55012DA952FD00BCE3B3 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 70FC54E92DA952FD00BCE3B3;
+					};
+				};
+			};
+			buildConfigurationList = 70FC54E52DA952FD00BCE3B3 /* Build configuration list for PBXProject "BatteryAlert" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70FC54E12DA952FD00BCE3B3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 70FC54EB2DA952FD00BCE3B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70FC54E92DA952FD00BCE3B3 /* BatteryAlert */,
+				70FC54F72DA952FD00BCE3B3 /* BatteryAlertTests */,
+				70FC55012DA952FD00BCE3B3 /* BatteryAlertUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70FC54E82DA952FD00BCE3B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FC54F62DA952FD00BCE3B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FC55002DA952FD00BCE3B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70FC54E62DA952FD00BCE3B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FC54F42DA952FD00BCE3B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70FC54FE2DA952FD00BCE3B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70FC54FA2DA952FD00BCE3B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70FC54E92DA952FD00BCE3B3 /* BatteryAlert */;
+			targetProxy = 70FC54F92DA952FD00BCE3B3 /* PBXContainerItemProxy */;
+		};
+		70FC55042DA952FD00BCE3B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70FC54E92DA952FD00BCE3B3 /* BatteryAlert */;
+			targetProxy = 70FC55032DA952FD00BCE3B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		70FC550A2DA952FD00BCE3B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		70FC550B2DA952FD00BCE3B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		70FC550D2DA952FD00BCE3B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BatteryAlert/BatteryAlert.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mac.BatteryAlert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		70FC550E2DA952FD00BCE3B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BatteryAlert/BatteryAlert.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mac.BatteryAlert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		70FC55102DA952FD00BCE3B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mac.BatteryAlertTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BatteryAlert.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BatteryAlert";
+			};
+			name = Debug;
+		};
+		70FC55112DA952FD00BCE3B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mac.BatteryAlertTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BatteryAlert.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BatteryAlert";
+			};
+			name = Release;
+		};
+		70FC55132DA952FD00BCE3B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mac.BatteryAlertUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = BatteryAlert;
+			};
+			name = Debug;
+		};
+		70FC55142DA952FD00BCE3B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mac.BatteryAlertUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = BatteryAlert;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70FC54E52DA952FD00BCE3B3 /* Build configuration list for PBXProject "BatteryAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70FC550A2DA952FD00BCE3B3 /* Debug */,
+				70FC550B2DA952FD00BCE3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70FC550C2DA952FD00BCE3B3 /* Build configuration list for PBXNativeTarget "BatteryAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70FC550D2DA952FD00BCE3B3 /* Debug */,
+				70FC550E2DA952FD00BCE3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70FC550F2DA952FD00BCE3B3 /* Build configuration list for PBXNativeTarget "BatteryAlertTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70FC55102DA952FD00BCE3B3 /* Debug */,
+				70FC55112DA952FD00BCE3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70FC55122DA952FD00BCE3B3 /* Build configuration list for PBXNativeTarget "BatteryAlertUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70FC55132DA952FD00BCE3B3 /* Debug */,
+				70FC55142DA952FD00BCE3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70FC54E22DA952FD00BCE3B3 /* Project object */;
+}
