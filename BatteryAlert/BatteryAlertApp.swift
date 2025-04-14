@@ -41,35 +41,49 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         }
     }
     
-    // MARK: - UNUserNotificationCenterDelegate
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                              willPresent notification: UNNotification,
-                              withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.banner, .sound])
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                              didReceive response: UNNotificationResponse,
-                              withCompletionHandler completionHandler: @escaping () -> Void) {
-        completionHandler()
-    }
-    
     private func setupStatusBar() {
         statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         
         if let button = statusBarItem.button {
-            button.image = NSImage(systemSymbolName: "battery.100", accessibilityDescription: "Battery Alert")
+            if let image = NSImage(systemSymbolName: "battery.100.bolt", accessibilityDescription: "Battery Status") {
+                image.isTemplate = true  // This makes it automatically adapt to dark/light mode
+                button.image = image
+            }
         }
         
         let menu = NSMenu()
         
         menu.addItem(NSMenuItem(title: "Low Threshold: \(settingsManager.lowThreshold)%", action: #selector(showLowThresholdAlert), keyEquivalent: "l"))
         menu.addItem(NSMenuItem(title: "High Threshold: \(settingsManager.highThreshold)%", action: #selector(showHighThresholdAlert), keyEquivalent: "h"))
+        menu.addItem(NSMenuItem(title: "Check Interval: \(Int(settingsManager.checkInterval))s", action: #selector(showCheckIntervalAlert), keyEquivalent: "i"))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Start at Login", action: #selector(toggleLoginItem), keyEquivalent: "s"))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
         statusBarItem.menu = menu
+        updateLoginItemMenu()
+    }
+    
+    @objc private func toggleLoginItem() {
+        let isEnabled = UserDefaults.standard.bool(forKey: "StartAtLogin")
+        UserDefaults.standard.set(!isEnabled, forKey: "StartAtLogin")
+        updateLoginItemMenu()
+        
+        guard let url = Bundle.main.bundleURL as? URL else { return }
+        
+        do {
+            try NSWorkspace.shared.setLaunchOnLogin(enabled: !isEnabled, at: url)
+        } catch {
+            print("Error managing login item: \(error)")
+        }
+    }
+    
+    private func updateLoginItemMenu() {
+        if let menuItem = statusBarItem.menu?.items.first(where: { $0.keyEquivalent == "s" }) {
+            let isEnabled = UserDefaults.standard.bool(forKey: "StartAtLogin")
+            menuItem.state = isEnabled ? .on : .off
+        }
     }
     
     @objc private func showLowThresholdAlert() {
@@ -110,5 +124,40 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 statusBarItem.menu?.item(at: 1)?.title = "High Threshold: \(value)%"
             }
         }
+    }
+    
+    @objc private func showCheckIntervalAlert() {
+        let alert = NSAlert()
+        alert.messageText = "Set Check Interval"
+        alert.informativeText = "Enter the number of seconds between battery checks (minimum 30)"
+        
+        let input = NSTextField(frame: NSRect(x: 0, y: 0, width: 200, height: 24))
+        input.stringValue = "\(Int(settingsManager.checkInterval))"
+        alert.accessoryView = input
+        
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        
+        if alert.runModal() == .alertFirstButtonReturn {
+            if let value = Int(input.stringValue), value >= 30 {
+                settingsManager.checkInterval = TimeInterval(value)
+                statusBarItem.menu?.items[2].title = "Check Interval: \(value)s"
+                batteryMonitor.updateCheckInterval()
+            }
+        }
+    }
+    
+    // MARK: - UNUserNotificationCenterDelegate
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              willPresent notification: UNNotification,
+                              withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              didReceive response: UNNotificationResponse,
+                              withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
     }
 }

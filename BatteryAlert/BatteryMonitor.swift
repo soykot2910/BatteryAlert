@@ -22,8 +22,10 @@ class BatteryMonitor {
     }
     
     func startMonitoring() {
-        // Check battery every 5 minutes
-        timer = Timer.scheduledTimer(withTimeInterval: 300, repeats: true) { [weak self] _ in
+        stopMonitoring() // Stop any existing timer
+        
+        // Create new timer with current interval setting
+        timer = Timer.scheduledTimer(withTimeInterval: settingsManager.checkInterval, repeats: true) { [weak self] _ in
             self?.checkBatteryStatus()
         }
         timer?.fire() // Check immediately
@@ -32,6 +34,11 @@ class BatteryMonitor {
     func stopMonitoring() {
         timer?.invalidate()
         timer = nil
+    }
+    
+    func updateCheckInterval() {
+        // Restart monitoring with new interval
+        startMonitoring()
     }
     
     private func checkBatteryStatus() {
