@@ -6,6 +6,7 @@ class BatteryMonitor {
     private var timer: Timer?
     private let settingsManager: SettingsManager
     private var lastNotificationType: NotificationType?
+    private var isMonitoring = false
     
     enum NotificationType {
         case low
@@ -22,18 +23,25 @@ class BatteryMonitor {
     }
     
     func startMonitoring() {
-        stopMonitoring() // Stop any existing timer
+        guard !isMonitoring else { return }
+        stopMonitoring()
+        
+        // Validate check interval
+        let interval = max(30, settingsManager.checkInterval) // Ensure minimum 30 seconds
         
         // Create new timer with current interval setting
-        timer = Timer.scheduledTimer(withTimeInterval: settingsManager.checkInterval, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { [weak self] _ in
             self?.checkBatteryStatus()
         }
+        timer?.tolerance = 1.0 // Add some tolerance to help with power efficiency
         timer?.fire() // Check immediately
+        isMonitoring = true
     }
     
     func stopMonitoring() {
         timer?.invalidate()
         timer = nil
+        isMonitoring = false
     }
     
     func updateCheckInterval() {
@@ -42,11 +50,20 @@ class BatteryMonitor {
     }
     
     private func checkBatteryStatus() {
-        let snapshot = IOPSCopyPowerSourcesInfo().takeRetainedValue()
-        let sources = IOPSCopyPowerSourcesList(snapshot).takeRetainedValue() as Array
+        guard let snapshot = IOPSCopyPowerSourcesInfo()?.takeRetainedValue() else {
+            print("Error: Could not get power source info")
+            return
+        }
+        
+        guard let sources = IOPSCopyPowerSourcesList(snapshot)?.takeRetainedValue() as? [CFTypeRef] else {
+            print("Error: Could not get power source list")
+            return
+        }
         
         for source in sources {
-            let info = IOPSGetPowerSourceDescription(snapshot, source).takeRetainedValue() as NSDictionary
+            guard let info = IOPSGetPowerSourceDescription(snapshot, source)?.takeUnretainedValue() as? [String: Any] else {
+                continue
+            }
             
             if let capacity = info[kIOPSCurrentCapacityKey] as? Int,
                let isCharging = info[kIOPSPowerSourceStateKey] as? String {
@@ -55,13 +72,13 @@ class BatteryMonitor {
                 
                 // Check low battery threshold
                 if capacity <= settingsManager.lowThreshold && !charging && lastNotificationType != .low {
-                    showNotification(title: "Low Battery", body: "Please plug in the charger")
+                    showNotification(title: "Low Battery Alert", body: "Battery level is at \(capacity)%. Please plug in the charger.")
                     lastNotificationType = .low
                 }
                 
                 // Check high battery threshold
                 if capacity >= settingsManager.highThreshold && charging && lastNotificationType != .high {
-                    showNotification(title: "High Battery", body: "Please unplug the charger")
+                    showNotification(title: "High Battery Alert", body: "Battery level is at \(capacity)%. Consider unplugging the charger.")
                     lastNotificationType = .high
                 }
                 
@@ -79,8 +96,11 @@ class BatteryMonitor {
         content.body = body
         content.sound = UNNotificationSound.default
         
+        // Add a unique identifier based on the notification type
+        let identifier = "BatteryAlert-\(UUID().uuidString)"
+        
         let request = UNNotificationRequest(
-            identifier: UUID().uuidString,
+            identifier: identifier,
             content: content,
             trigger: nil
         )
