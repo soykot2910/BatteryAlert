@@ -57,12 +57,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         menu.addItem(NSMenuItem(title: "High Threshold: \(settingsManager.highThreshold)%", action: #selector(showHighThresholdAlert), keyEquivalent: "h"))
         menu.addItem(NSMenuItem(title: "Check Interval: \(Int(settingsManager.checkInterval))s", action: #selector(showCheckIntervalAlert), keyEquivalent: "i"))
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Start at Login", action: #selector(toggleLoginItem), keyEquivalent: "s"))
+        menu.addItem(NSMenuItem(title: "Sound Notifications", action: #selector(toggleSoundNotifications), keyEquivalent: "s"))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Start at Login", action: #selector(toggleLoginItem), keyEquivalent: "l"))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
         statusBarItem.menu = menu
         updateLoginItemMenu()
+        updateSoundNotificationsMenu()
     }
     
     @objc private func toggleLoginItem() {
@@ -80,7 +83,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     }
     
     private func updateLoginItemMenu() {
-        if let menuItem = statusBarItem.menu?.items.first(where: { $0.keyEquivalent == "s" }) {
+        if let menuItem = statusBarItem.menu?.items.first(where: { $0.keyEquivalent == "l" }) {
             let isEnabled = UserDefaults.standard.bool(forKey: "StartAtLogin")
             menuItem.state = isEnabled ? .on : .off
         }
@@ -144,6 +147,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 statusBarItem.menu?.items[2].title = "Check Interval: \(value)s"
                 batteryMonitor.updateCheckInterval()
             }
+        }
+    }
+    
+    @objc private func toggleSoundNotifications() {
+        settingsManager.soundEnabled.toggle()
+        updateSoundNotificationsMenu()
+    }
+    
+    private func updateSoundNotificationsMenu() {
+        if let menuItem = statusBarItem.menu?.items.first(where: { $0.keyEquivalent == "s" }) {
+            menuItem.state = settingsManager.soundEnabled ? .on : .off
         }
     }
     

@@ -1,6 +1,7 @@
 import Foundation
 import IOKit.ps
 import UserNotifications
+import AppKit
 
 class BatteryMonitor {
     private var timer: Timer?
@@ -94,7 +95,11 @@ class BatteryMonitor {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
-        content.sound = UNNotificationSound.default
+        
+        // Configure sound if enabled
+        if settingsManager.soundEnabled {
+            content.sound = UNNotificationSound.default
+        }
         
         // Add a unique identifier based on the notification type
         let identifier = "BatteryAlert-\(UUID().uuidString)"
@@ -109,6 +114,25 @@ class BatteryMonitor {
             if let error = error {
                 print("Error showing notification: \(error.localizedDescription)")
             }
+        }
+        
+        // Show system alert
+        DispatchQueue.main.async {
+            let alert = NSAlert()
+            alert.messageText = title
+            alert.informativeText = body
+            alert.alertStyle = .warning
+            alert.addButton(withTitle: "OK")
+            
+            // Make the alert appear on top of other windows
+            alert.window.level = .floating
+            
+            // Play system alert sound if enabled
+            if self.settingsManager.soundEnabled {
+                NSSound(named: "Sosumi")?.play()
+            }
+            
+            alert.runModal()
         }
     }
 } 

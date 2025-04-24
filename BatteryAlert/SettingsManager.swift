@@ -5,10 +5,11 @@ class SettingsManager {
     private let lowThresholdKey = "lowThreshold"
     private let highThresholdKey = "highThreshold"
     private let checkIntervalKey = "checkInterval"
+    private let soundEnabledKey = "soundEnabled"
     
     // Default values
-    private let defaultLowThreshold = 20
-    private let defaultHighThreshold = 80
+    private let defaultLowThreshold = 21
+    private let defaultHighThreshold = 79
     private let defaultCheckInterval: TimeInterval = 60
     private let minimumCheckInterval: TimeInterval = 30
     
@@ -45,6 +46,15 @@ class SettingsManager {
         }
     }
     
+    var soundEnabled: Bool {
+        get {
+            return defaults.bool(forKey: soundEnabledKey)
+        }
+        set {
+            defaults.set(newValue, forKey: soundEnabledKey)
+        }
+    }
+    
     init() {
         // Set default values if not already set
         if defaults.integer(forKey: lowThresholdKey) == 0 {
@@ -55,6 +65,9 @@ class SettingsManager {
         }
         if defaults.double(forKey: checkIntervalKey) == 0 {
             checkInterval = defaultCheckInterval
+        }
+        if defaults.object(forKey: soundEnabledKey) == nil {
+            soundEnabled = true // Enable sound by default
         }
         
         // Ensure high threshold is always greater than low threshold
