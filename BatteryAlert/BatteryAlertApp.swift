@@ -7,9 +7,11 @@ struct BatteryAlertApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
-        Settings {
+        WindowGroup {
             EmptyView()
         }
+        .windowStyle(.hiddenTitleBar)
+        .defaultSize(width: 0, height: 0)
     }
 }
 
@@ -19,6 +21,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     var settingsManager: SettingsManager!
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        // Hide dock icon
+        NSApp.setActivationPolicy(.accessory)
+        
         // Initialize settings
         settingsManager = SettingsManager()
         
